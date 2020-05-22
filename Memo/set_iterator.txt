@@ -1,0 +1,5 @@
+set<string> kind;
+set<string>::iterator iter;
+
+for (iter = kind.begin(); iter != kind.end(); ++iter) // set의 값을 사용하려면 반복자 사용
+			answer *= (item[*iter] + 1);
