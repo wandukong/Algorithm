@@ -1,0 +1,3 @@
+for (int i = 0; i < phone_book.size() - 1; i++) 
+		if (phone_book[i + 1].find(phone_book[i], 0) != string::npos) // 원하는 문자열을 찾지 못한 경우, string::npos 반환
+			answer = false;
