@@ -1,0 +1,4 @@
+priority_queue (heap)
+
+priority_queue<int> q; // 최대힙
+priority_queue<int, vector<int>, greater<int>> q ; //최소힙
