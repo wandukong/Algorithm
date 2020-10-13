@@ -16,7 +16,6 @@ int main()
         scanf("%d", &a);
         st.push(a);
     }
-
     int temp = st.top();
     st.pop();
 
