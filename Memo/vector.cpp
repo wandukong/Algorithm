@@ -14,6 +14,7 @@ int main()
     // 1. 특정 위치 값 제거하기.
     //***********************************************
     v.erase(v.begin() + 1, v.begin() + 3); // 두번째 세번째 제거  // 1 4 5
+    // v.erase(v.begin() + n, v.begin() + m)  v[n]~v[m-1] 삭제
 
     for (int i = 0; i < v.size(); i++)
         printf("%d ", v[i]);
