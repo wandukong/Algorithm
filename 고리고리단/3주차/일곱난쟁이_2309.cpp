@@ -27,6 +27,5 @@ int main()
     for (int i = 0; i < 9; i++)
         if (arr[i] != ans1 && arr[i] != ans2)
             printf("%d\n", arr[i]);
-
     return 0;
 }
