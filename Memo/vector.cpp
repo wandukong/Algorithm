@@ -51,4 +51,15 @@ int main()
     for (int i = 0; i < gems2.size(); i++)
         printf("%s ", gems2[i].c_str());
     printf("\n");
+
+    //***********************************************
+    // 5. 특정 값 위치 찾기 find(v.begin(), v.end(), 5) - v.begin()
+    //***********************************************
+
+    for (int i = 0; i < v.size(); i++)
+        printf("%d ", v[i]);
+    printf("\n");
+
+    find(v.begin(), v.end(), 5) - v.begin();
+    printf("5. %d\n", find(v.begin(), v.end(), 5) - v.begin());
 }
