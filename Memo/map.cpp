@@ -6,10 +6,28 @@
 
 using namespace std;
 
-    vector<string> gems{"DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"};
+vector<string> str{"ohhenrie", "charlie", "baesangwook", "obama", "baesangwook", "ohhenrie", "clinton"};
+map<string, int> m;
+
+vector<string> gems{"DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"};
 
 int main()
 {
+
+    //***********************************************
+    // 1. map의 크기만큼 키와 데이터  가져오기.
+    //***********************************************
+    for (int i = 0; i < str.size(); i++)
+    {
+        m[str[i]]++;
+    }
+    map<string, int>::iterator it;
+    for (it = m.begin(); it != m.end(); it++)
+        printf("%s %d\n", it->first.c_str(), it->second);
+
+    printf("\n\n\n");
+
+    //***********************************************   //***********************************************
     map<string, int> cart;
 
     vector<string> treasure = gems;
