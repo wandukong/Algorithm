@@ -23,7 +23,6 @@ int main()
         cin >> temp;
         m[temp]++;
     }
-
     map<string, int>::iterator it;
     for (it = m.begin(); it != m.end(); it++)
         if (it->second == 2)

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int N, M;
+int N, M, a;
 map<int, int> m;
 
 int main()
@@ -20,7 +20,6 @@ int main()
     scanf("%d", &M);
     for (int i = 0; i < M; i++)
     {
-        int a;
         scanf("%d", &a);
         if (m[a])
             printf("1\n");
