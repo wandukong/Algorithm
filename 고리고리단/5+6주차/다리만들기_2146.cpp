@@ -1,18 +1,19 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <queue>
 #include <string.h>
 
 using namespace std;
 
-int N, cnt, ans = 987654321;
+int N, island, ans = 987654321;
 
 int arr[101][101];
 int check[101][101];
 int dr[] = {1, -1, 0, 0};
 int dc[] = {0, 0, -1, 1};
 
-void init(int r, int c)
+void dfs(int r, int c) // 섬들을 구별하기 위해서 숫자르 바꿔준다.
 {
     check[r][c] = 1;
     for (int i = 0; i < 4; i++)
@@ -21,37 +22,41 @@ void init(int r, int c)
         int nc = c + dc[i];
         if (nr < 0 || nc < 0 || nr >= N || nc >= N || !arr[nr][nc] || check[nr][nc])
             continue;
-        arr[nr][nc] = cnt;
-        init(nr, nc);
+        arr[nr][nc] = island;
+        dfs(nr, nc);
     }
 }
 
-void dfs(int r, int c)
+int bfs(int r, int c, int cnt)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        int nr = r + dr[i];
-        int nc = c + dc[i];
-        if (nr < 0 || nc < 0 || nr >= N || nc >= N)
-            continue;
+    queue<pair<pair<int, int>, int>> q;
+    q.push({{r, c}, cnt});
 
-        if (arr[nr][nc] == 0)
+    while (!q.empty())
+    {
+        r = q.front().first.first;
+        c = q.front().first.second;
+        int cnt = q.front().second;
+        q.pop();
+
+        for (int i = 0; i < 4; i++)
         {
-            if (!check[nr][nc] || check[nr][nc] > check[r][c] + 1)
+            int nr = r + dr[i];
+            int nc = c + dc[i];
+
+            if (nr < 0 || nc < 0 || nr >= N || nc >= N)
+                continue;
+
+            if (arr[nr][nc] == 0 && !check[nr][nc]) // 방문하지 않고 다음 이동할 곳이 바다인 경우
             {
-                check[nr][nc] = check[r][c] + 1;
-                dfs(nr, nc);
+                check[nr][nc] = 1;
+                q.push({{nr, nc}, cnt + 1});
             }
-        }
-        else if (arr[nr][nc] != cnt)
-        {
-            if (check[r][c] < ans)
-            {
-                printf("%d %d => %d\n", nr, nc, check[r][c]);
-                ans = check[r][c];
-            }
+            else if (arr[nr][nc] != island && arr[nr][nc] != 0) // 바다가 아닌 다른 섬을 만났을때
+                return cnt;
         }
     }
+    return 987654321;
 }
 
 int main()
@@ -61,45 +66,28 @@ int main()
         for (int j = 0; j < N; j++)
             scanf("%d", &arr[i][j]);
 
-    cnt = 1;
+    island = 1;
     for (int i = 0; i < N; i++)
         for (int j = 0; j < N; j++)
-            if (arr[i][j] && !check[i][j])
+            if (arr[i][j] & !check[i][j])
             {
-                arr[i][j] = cnt;
-                init(i, j);
-                cnt++;
+                arr[i][j] = island;
+                dfs(i, j);
+                island++;
             }
     memset(check, 0, sizeof(check));
 
-    printf("\n\n");
-
-    // dfs(2, 0);
-
-    // for (int k = 0; k < N; k++)
-    // {
-    //     for (int l = 0; l < N; l++)
-    //     {
-    //         printf("%d ", check[k][l]);
-    //     }
-    //     printf("\n");
-    // }
-
     for (int i = 0; i < N; i++)
-    {
         for (int j = 0; j < N; j++)
-        {
-            if (arr[i][j])
+            if (arr[i][j]) // 섬의 일부분만 bfs()를 돌린다.
             {
-                ans = 987654321;
-                printf("==========%d %d==========\n", i, j);
-                cnt = arr[i][j];
-                dfs(i, j);
+                island = arr[i][j];
+                ans = min(bfs(i, j, 0), ans);
                 memset(check, 0, sizeof(check));
             }
-        }
-    }
-
-    printf("%d\n", ans);
+    if (ans == 987654321)
+        printf("0\n");
+    else
+        printf("%d\n", ans);
     return 0;
 }
