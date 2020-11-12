@@ -13,7 +13,7 @@ int check[101][101];
 int dr[] = {1, -1, 0, 0};
 int dc[] = {0, 0, -1, 1};
 
-void dfs(int r, int c) // 섬들을 구별하기 위해서 숫자르 바꿔준다.
+void dfs(int r, int c) // 섬들을 구별하기 위해서 숫자를 바꿔준다.
 {
     check[r][c] = 1;
     for (int i = 0; i < 4; i++)
