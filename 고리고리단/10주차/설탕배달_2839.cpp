@@ -2,43 +2,22 @@
 #include <algorithm>
 using namespace std;
 
+int dp[5001];
+int N;
+
 int main()
 {
-    int a, ans, con;
-    scanf("%d", &a);
+    scanf("%d", &N);
+    for (int i = 0; i <= N; i++)
+        dp[i] = 2000;
 
-    ans = a / 5;
-    con = a % 5;
-    if (ans > 0)
-    {
-        while (ans > 0)
-        {
-            if (con % 3 == 0)
-            {
-                ans += con / 3;
-                break;
-            }
-            else
-            {
-                ans--;
-                con += 5;
-            }
-        }
-    }
-    if (ans == 0)
-    {
-        if (a % 3 == 0)
-        {
-            ans = a / 3;
-            printf("%d\n", ans);
-            return 0;
-        }
-        else
-        {
-            printf("-1\n");
-            return 0;
-        }
-    }
+    dp[3] = dp[5] = 1;
+
+    for (int i = 6; i <= N; i++)
+        dp[i] = min(dp[i - 3], dp[i - 5]) + 1;
+
+    if (dp[N] >= 2000)
+        printf("-1");
     else
-        printf("%d\n", ans);
+        printf("%d", dp[N]);
 }
