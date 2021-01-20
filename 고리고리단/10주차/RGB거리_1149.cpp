@@ -3,13 +3,13 @@
 
 using namespace std;
 
-int N, arr[1001][1001], dp[1001][1001];
+int N, arr[1001][3], dp[1001][3];
 
 int main()
 {
     scanf("%d", &N);
     for (int i = 0; i < N; i++)
-        for (int j = 0; j < N; j++)
+        for (int j = 0; j < 3; j++)
             scanf("%d", &arr[i][j]);
 
     dp[0][0] = arr[0][0];
