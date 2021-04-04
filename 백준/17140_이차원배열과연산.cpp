@@ -41,6 +41,8 @@ void calR()
         memset(arr[i], 0, sizeof(arr[i]));
         for (int j = 0; j < v.size(); j++)
         {
+            if (j == 50)
+                break;
             arr[i][(j + 1) * 2 - 1] = v[j].second;
             arr[i][(j + 1) * 2] = v[j].first;
             maxC = max(maxC, (j + 1) * 2);
@@ -76,8 +78,11 @@ void calC()
 
         for (int j = 0; j < v.size(); j++)
         {
+            if (j == 50)
+                break;
             arr[(j + 1) * 2 - 1][i] = v[j].second;
             arr[(j + 1) * 2][i] = v[j].first;
+
             maxR = max(maxR, (j + 1) * 2);
         }
         v = vector<pair<int, int>>();
