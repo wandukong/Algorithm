@@ -18,14 +18,14 @@ void RabinKarp()
         textHashValue = (textHashValue + (T[i] * power) % m) % m;
         patterHashValue = (patterHashValue + (P[i] * power) % m) % m;
         if (i != 0)
-            power = (power * 403) % m;
+            power = (power * 107) % m;
     }
 
     for (int i = 0; i <= tSize - pSize; i++)
     {
         if (textHashValue == patterHashValue)
             answer.push_back(i + 1);
-        textHashValue = ((403 * (textHashValue - (T[i] * power) % m)) % m + T[i + pSize]) % m;
+        textHashValue = ((107 * (textHashValue - (T[i] * power) % m)) % m + T[i + pSize]) % m;
         if (textHashValue < 0)
             textHashValue += m;
     }
