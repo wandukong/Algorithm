@@ -10,7 +10,7 @@ long long arr[1000001], tree[3000001];
 long long init(int n, int s, int e)
 {
     if (s == e)
-        return tree[n] = arr[s];
+        tree[n] = arr[s];
     int m = (s + e) / 2;
     tree[n] = init(n * 2, s, m) + init(n * 2 + 1, m + 1, e);
     return tree[n];
@@ -18,7 +18,6 @@ long long init(int n, int s, int e)
 
 void update(int n, int s, int e, int idx, long long diff)
 {
-    // n : 현재 노드
     if (s <= idx && idx <= e)
         tree[n] += diff;
     else
@@ -32,8 +31,6 @@ void update(int n, int s, int e, int idx, long long diff)
 
 long long sum(int l, int r, int n, int s, int e)
 {
-    // l,r : 찾는 구간
-    // s,e : 현재 찾고 있는 구간
     if (l <= s && e <= r)
         return tree[n];
     if (r < s || l > e)
