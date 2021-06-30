@@ -5,49 +5,44 @@ using namespace std;
 
 int main()
 {
+    int items_flag = 0;
 
-    // mask
-    const unsigned char opt0 = 1 << 0;
-    const unsigned char opt1 = 1 << 1;
-    const unsigned char opt2 = 1 << 2;
-    const unsigned char opt3 = 1 << 3;
+    int opt0 = 1 << 0;
+    int opt1 = 1 << 1;
+    int opt2 = 1 << 2;
+    int opt3 = 1 << 3;
 
-    unsigned char items_flag = 0;
-    cout << "No item " << bitset<8>(items_flag) << endl;
+    int items_flag = 0;
 
-    // item0 on : bitwise or 연산자 -> mask에 1로 설정된 비트 켜기
+    // 비트 켜기 : | , +
     items_flag |= opt0;
-    cout << "Item0 obtained " << bitset<8>(items_flag) << endl;
-
-    // item3 on
+    printf("opt0 획득 => 결과 : %s\n", bitset<8>(items_flag).to_string().c_str());
     items_flag |= opt3;
-    cout << "Item3 obtained " << bitset<8>(items_flag) << endl;
+    printf("opt3 획득 => 결과 : %s\n", bitset<8>(items_flag).to_string().c_str());
 
-    // item3 off  : bitwise and 연산자 + not 연산자
+    // 비트 끄기 : & ~
     items_flag &= ~opt3;
-    cout << "Item3 lost " << bitset<8>(items_flag) << endl;
+    printf("opt3 잃음 => 결과 : %s\n", bitset<8>(items_flag).to_string().c_str());
 
-    // has item1 ? mask를 갖고 있는지 아닌지 확인
-    if (items_flag & opt1)
-        cout << "Has Item1" << endl;
-    else
-        cout << "Not have Item1" << endl;
-
-    // has item0 ?
+    // 비트 켜져있는지 확인
     if (items_flag & opt0)
-        cout << "Has Item0" << endl;
+        cout << "opt1 갖고 있음" << endl;
+    else
+        cout << "opt1 갖고 있지 않음" << endl;
+
+    if (items_flag & opt3)
+        cout << "opt1 갖고 있음" << endl;
+    else
+        cout << "opt1 갖고 있지 않음" << endl;
 
     // obtain item2, item3
     items_flag |= (opt2 | opt3);
-    cout << "Item2, Item3 obtained " << bitset<8>(items_flag) << endl;
+    printf("opt2, opt3 획득  => 결과 : %s\n", bitset<8>(items_flag).to_string().c_str());
 
     // xor 연산자 : 비트 토글(1->0, 0->1)
-    if ((items_flag & opt2) && !(items_flag & opt1))
-    {
-        items_flag ^= opt2;
-        items_flag ^= opt1;
-    }
-    cout << bitset<8>(items_flag) << endl;
+    items_flag ^= opt0;
+    items_flag ^= opt1;
+    printf("opt0, opt1 비트 토글 => 결과 : %s\n", bitset<8>(items_flag).to_string().c_str());
 
     return 0;
 }
