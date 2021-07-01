@@ -10,8 +10,8 @@ int dp[101][101];
 
 int main()
 {
-    for (int i = 1; i < N; i++)
-        for (int j = 0; j < N; j++)
+    for (int i = 1; i <= N; i++)
+        for (int j = 1; j <= N; j++)
             if (i == j)
                 dp[i][j] = 0;
             else
@@ -24,9 +24,9 @@ int main()
         dp[a][b] = dp[b][a] = cost; // cost
     }
 
-    for (int k = 0; k < N; k++)
-        for (int i = 1; i < N; i++)
-            for (int j = 0; j < N; j++)
+    for (int k = 1; k <= N; k++)
+        for (int i = 1; i <= N; i++)
+            for (int j = 1; j <= N; j++)
                 if (dp[i][j] > dp[i][k] + dp[k][j])
                     dp[i][j] = dp[i][k] + dp[k][j];
     return 0;
