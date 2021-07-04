@@ -36,5 +36,21 @@ int main()
                 q.pusth(next);
         }
     }
+
+    for(int i = 0 ; i < n ; i++) // 사이클 가능성 
+    {
+        if(q.empty()){
+            printf("사이클 발생");
+            break;
+        }
+        int cur = q.front();
+        q.pop();
+        for (int i = 0; i < graph[cur].size(); i++)
+        {
+            int next = graph[cur][i];
+            if (--indegree[next] == 0)
+                q.pusth(next);
+        }
+    }
     return 0;
 }
