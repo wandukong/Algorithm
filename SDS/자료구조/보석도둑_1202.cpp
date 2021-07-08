@@ -43,6 +43,6 @@ int main()
             pq.pop();
         }
     }
-    printf("%d", ans);
+    printf("%lld", ans);
     return 0;
 }
