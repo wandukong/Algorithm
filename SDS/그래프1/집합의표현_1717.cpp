@@ -32,12 +32,7 @@ int main()
         if (cal == 0)
             setParent(a, b);
         else
-        {
-            if (getParent(a) == getParent(b))
-                printf("YES\n");
-            else
-                printf("NO\n");
-        }
+            printf("%s\n", getParent(a) == getParent(b) ? "YES" : "NO");
     }
     return 0;
 }
