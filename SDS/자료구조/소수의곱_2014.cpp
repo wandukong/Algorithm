@@ -28,7 +28,7 @@ int main()
         for (int i = 0; i < N; i++)
         {
             long long num = answer * arr[i];
-            if (num > 2147483648)
+            if (num > 2147483647)
                 continue;
             pq.push(num);
         }
