@@ -4,8 +4,8 @@
 
 using namespace std;
 
-int N, M, PIVOT = 1;
-vector<int> tree;
+#define PIVOT (1 << 17) // 문제의 N 최대값 10만을 포함할 수 있는 값으로 설정
+int N, M, tree[PIVOT * 2];
 
 void update(int idx, int num)
 {
@@ -33,20 +33,17 @@ int sum(int l, int r)
 int main()
 {
     scanf("%d %d", &N, &M);
-    while (PIVOT <= N)
-        PIVOT <<= 1;
-    tree.resize(2 * PIVOT);
     for (int i = 1; i <= N; i++)
     {
         int num;
         scanf("%d", &num);
-        update(i - 1, num);
+        update(i, num);
     }
     while (M--)
     {
         int a, b;
         scanf("%d %d", &a, &b);
-        printf("%d\n", sum(a - 1, b - 1));
+        printf("%d\n", sum(a, b));
     }
     return 0;
 }
