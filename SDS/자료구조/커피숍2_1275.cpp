@@ -43,7 +43,7 @@ int main()
         long long b;
         scanf("%d %d %d %lld", &x, &y, &a, &b);
         if (x > y)
-            swap(a, b);
+            swap(x, y);
         printf("%lld\n", sum(x, y));
         update(a, b);
     }
