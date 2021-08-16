@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Çà·Ä°ö¼À_10830 {
+public class Çà·ÄÁ¦°ö_10830 {
 	static int A;
 	static long B;
 	static int[][] matrix;
