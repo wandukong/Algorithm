@@ -1,8 +1,8 @@
-package ¹éÁØ;
+package boj;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class ´Ü¾îÀÇ°³¼ö_1152 {
+public class ë‹¨ì–´ì˜ê°œìˆ˜_1152 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -21,12 +21,12 @@ public class ´Ü¾îÀÇ°³¼ö_1152 {
 		
 		/*
 		 * 
-		 * String.split() °ú StringTokenizer() ÀÇ Â÷ÀÌ
+		 * String.split() ï¿½ï¿½ StringTokenizer() ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		 * 
-		 * 1. ±¸ºÐÀÚ »çÀÌ¿¡ µ¥ÀÌÅÍ°¡ ¾ø´Â °æ¿ì split¸¸ °ø¹é µ¥ÀÌÅÍ¸¦ ¹ÝÈ¯ÇÑ´Ù.
+		 * 1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ splitï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
 		 * String str = "apple,banana,,kiwi";
-		 * str.split(",") => "apple" "bababa" "" "kiwi" : 4°³
-		 * st = StringTokenizer(str, ","); st.countTokens() => "apple" "bababa" "kiwi" : 3°³
+		 * str.split(",") => "apple" "bababa" "" "kiwi" : 4ï¿½ï¿½
+		 * st = StringTokenizer(str, ","); st.countTokens() => "apple" "bababa" "kiwi" : 3ï¿½ï¿½
 		 * 
 		 */
 	}
