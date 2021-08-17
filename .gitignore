@@ -5,6 +5,6 @@
 /.metadata/
 
 .WithJava/.project
-.WithJava/.project
-.WithJava/.settings
-.WithJava/bin
+.WithJava/.classpath
+.WithJava/.settings/
+.WithJava/bin/
