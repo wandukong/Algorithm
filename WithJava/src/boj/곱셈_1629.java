@@ -1,11 +1,11 @@
-package น้มุ;
+package boj;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class ฐ๖ผภ_1629 {
+public class ๊ณฑ์…_1629 {
 	
 	static long A,B,C;
 
