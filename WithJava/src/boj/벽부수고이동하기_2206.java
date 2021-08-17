@@ -1,5 +1,4 @@
-package ¹éÁØ;
-
+package boj;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class º®ºÎ¼ö°íÀÌµ¿ÇÏ±â_2206 {
+public class ë²½ë¶€ìˆ˜ê³ ì´ë™í•˜ê¸°_2206 {
 	static class Info {
 		int r, c, cnt;
 		int is_breaked;
