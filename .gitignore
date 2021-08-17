@@ -2,3 +2,9 @@
 .vscode/settings.json
 
 .vscode/
+/.metadata/
+
+.WithJava/.project
+.WithJava/.project
+.WithJava/.settings
+.WithJava/bin
