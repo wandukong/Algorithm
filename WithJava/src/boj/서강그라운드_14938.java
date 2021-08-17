@@ -1,4 +1,4 @@
-package ¹éÁØ;
+package boj;
 
 
 import java.io.BufferedReader;
@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-
-
-public class ¼­°­±×¶ó¿îµå_14938 {
+public class ì„œê°•ê·¸ë¼ìš´ë“œ_14938 {
 	
 	static class Pair implements Comparable<Pair> {
 		int edge, weight;
