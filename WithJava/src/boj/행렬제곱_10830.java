@@ -1,11 +1,10 @@
-package ¹éÁØ;
-
+package boj;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Çà·ÄÁ¦°ö_10830 {
+public class í–‰ë ¬ì œê³±_10830 {
 	static int A;
 	static long B;
 	static int[][] matrix;
