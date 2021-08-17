@@ -1,10 +1,10 @@
-package ¹éÁØ;
+package boj;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class ¼­°­±×¶ó¿îµå_14938_floydWarshall {
+public class ì„œê°•ê·¸ë¼ìš´ë“œ_14938_floydWarshall {
 	static int N, M, R;
 	static int[] value;
 	static int[][] dp;
