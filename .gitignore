@@ -4,7 +4,7 @@
 .vscode/
 /.metadata/
 
-.WithJava/.project
-.WithJava/.classpath
-.WithJava/.settings/
-.WithJava/bin/
+WithJava/.project
+WithJava/.classpath
+WithJava/.settings/
+WithJava/bin/
